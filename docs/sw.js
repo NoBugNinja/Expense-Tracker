@@ -5,7 +5,6 @@ const CACHE_NAME = 'expense-tracker-v6';
 
 // Use relative paths for everything
 const ASSETS_TO_CACHE = [
-  '.',
   'index.html',
   'script.js',
   'output.css',

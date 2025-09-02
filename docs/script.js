@@ -48,21 +48,24 @@ document.addEventListener('DOMContentLoaded',()=>{
         }
      });
 
-     function RenderExpenses(){
-        expenseList.innerHTML="";
-        
-        expenses.forEach((expense)=>{
-            const li = document.createElement("li");
-            li.className = 'relative group bg-gray-700 flex justify-between items-center p-3 my-2 rounded-md border-r-4 border-red-600 transition-colors hover:bg-gray-600';
-            li.innerHTML = `
-                            <span class="text-gray-100">${expense.name}</span>
-                            <span class="font-semibold text-white">$${parseFloat(expense.amount).toFixed(2)}</span>
-                            <button data-id="${expense.id}" class="delete-btn absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full ml-2 bg-red-600 hover:bg-red-700 text-white font-bold w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-sm">x</button>
-                            `;
-            expenseList.appendChild(li);
-        })
-        upDateTotal();
-     }
+function RenderExpenses(){
+       expenseList.innerHTML="";
+       
+       expenses.forEach((expense)=>{
+           const li = document.createElement("li");
+           // This line below is the only part that changes
+           li.className = 'relative group bg-gray-700 flex justify-between items-center p-3 my-2 rounded-md border-r-4 border-red-600'; // Removed hover:bg-gray-600 for consistency
+           
+           li.innerHTML = `
+                <span class="text-gray-100">${expense.name}</span>
+                <span class="font-semibold text-white">$${parseFloat(expense.amount).toFixed(2)}</span>
+                
+                <button data-id="${expense.id}" class="delete-btn absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full ml-2 bg-red-600 hover:bg-red-700 text-white font-bold w-6 h-6 rounded-full transition-opacity duration-200 flex items-center justify-center text-sm">x</button>
+                `;
+           expenseList.appendChild(li);
+       })
+       upDateTotal();
+    }
 
      function calculateTotal(){
         return expenses.reduce((sum,expense)=>sum+expense.amount,0) 
