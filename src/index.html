@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link href="./output.css" rel="stylesheet">
+  <style>
+        /* Optional: Custom scrollbar for dark theme if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #374151; /* gray-700 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* gray-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* gray-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen font-sans">
+
+    <div class="bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-md mx-4 border border-gray-700">
+        <h1 class="text-3xl font-bold mb-6 text-center text-white">Expense Tracker</h1>
+
+        <form id="expense-form" class="mb-8">
+            <div class="mb-4">
+                <label for="expense-name" class="block text-gray-300 text-sm font-bold mb-2">Expense Name</label>
+                <input
+                    type="text"
+                    id="expense-name"
+                    placeholder="e.g., Dinner"
+                    required
+                    class="shadow-sm appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500"
+                >
+            </div>
+            <div class="mb-6">
+                <label for="expense-amount" class="block text-gray-300 text-sm font-bold mb-2">Amount (₹)</label>
+                <input
+                    type="number"
+                    id="expense-amount"
+                    placeholder="e.g., 450"
+                    min="0.01"
+                    step="0.01"
+                    required
+                    class="shadow-sm appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500"
+                >
+            </div>
+            <button class="w-full bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-200">
+                Add Expense
+            </button>
+        </form>
+
+        <h2 class="text-xl font-semibold mb-4 pb-2 border-b border-gray-700 text-white">Expenses</h2>
+        <ul id="expense-list" class="list-none p-0 m-0">
+            </ul>
+
+        <div class="flex justify-end items-center font-bold text-xl border-t border-gray-700 pt-4 mt-6">
+            <h3>Total:</h3>
+            <span class="ml-2 text-white">₹ <span id="total-amount">0.00</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
