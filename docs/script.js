@@ -53,8 +53,8 @@ function RenderExpenses(){
        
        expenses.forEach((expense)=>{
            const li = document.createElement("li");
-           // This line below is the only part that changes
-           li.className = 'relative group bg-gray-700 flex justify-between items-center p-3 my-2 rounded-md border-r-4 border-red-600'; // Removed hover:bg-gray-600 for consistency
+           
+           li.className = 'relative group bg-gray-700 flex justify-between items-center p-3 my-2 rounded-md border-r-4 border-red-600'; 
            
            li.innerHTML = `
                 <span class="text-gray-100">${expense.name}</span>
