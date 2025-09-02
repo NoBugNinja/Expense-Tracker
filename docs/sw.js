@@ -1,11 +1,12 @@
 const CACHE_NAME = 'expense-tracker-v2';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/script.js',
-  '/output.css',
-  '/images/icon-192x192.png',
-  '/images/icon-512x512.png'
+  './',
+  './index.html',
+  './script.js',
+  './output.css',
+  './images/icon-192x192.png',
+  './images/icon-512x512.png'
+
 ];
 
 
